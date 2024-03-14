@@ -78,15 +78,15 @@
 
         #region [e] factorial
             def factorial(n):
-            print("Factorial called with " + str(n))
-            if n < 2:
-                print("Returning 1")
-                return 1
-            result = n * factorial(n-1)
-            print("Returning " + str(result) + " for factorial of " + str(n))
-            return result
+                print("Factorial called with " + str(n))
+                if n < 2:
+                    print("Returning 1")
+                    return 1
+                result = n * factorial(n-1)
+                print("Returning " + str(result) + " for factorial of " + str(n))
+                return result
 
-            factorial(4) #max 990
+                factorial(4) #max 990
 
             #region [a] result
                 Factorial called with 4
@@ -98,6 +98,13 @@
                 Returning 6 for factorial of 3
                 Returning 24 for factorial of 4
                 24
+            #endregion
+
+            #region [a] recursion syntax
+                def recursive_function(parameters):
+                    if base_case_condition(parameters):
+                        return base_case_value
+                    recursive_function(modified_parameters)
             #endregion
         #endregion  
     #endregion
