@@ -1,5 +1,5 @@
 #region full syntax 1
-    #region word 1
+    #region[a] word 1
         in
         not
         or
@@ -8,7 +8,7 @@
         return
     #endregion
 
-    #region function 2
+    #region[a] function 2
         #region calc
             def to_celsius(x):
                '''Convert Fahrenheit to Celsius'''
@@ -75,9 +75,34 @@
                 print(fractional_part(5, 0)) # Should print 0
                 print(fractional_part(0, 5)) # Should print 0
         #endregion
+
+        #region [e] factorial
+            def factorial(n):
+            print("Factorial called with " + str(n))
+            if n < 2:
+                print("Returning 1")
+                return 1
+            result = n * factorial(n-1)
+            print("Returning " + str(result) + " for factorial of " + str(n))
+            return result
+
+            factorial(4) #max 990
+
+            #region [a] result
+                Factorial called with 4
+                Factorial called with 3
+                Factorial called with 2
+                Factorial called with 1
+                Returning 1
+                Returning 2 for factorial of 2
+                Returning 6 for factorial of 3
+                Returning 24 for factorial of 4
+                24
+            #endregion
+        #endregion  
     #endregion
 
-    #region built in function 3
+    #region[b] built in function 3
         print("Investigate failed login attempts during", month, "if more than", 100)
         print(type("This is a string"))
         string_representation = str(number)
@@ -90,7 +115,7 @@
         print(max(time_list))
     #endregion
 
-    #region if/else 4
+    #region[c] if/else 4
         number = -4
 
 
@@ -106,19 +131,19 @@
         print("Invalid username. Must be at least 3 characters long")
     #endregion
 
-    #region print 5
+    #region[d] print 5
         print("hello "+ "world")
         print(type("a"))
         print(type(2.5))
         print("The area of the triangle is: " + str(area)) 
     #endregion
 
-    #region var 6
+    #region[d] var 6
         captain: str = “Picard”
         a:int=1
     #endregion
 
-    #region bool 7
+    #region[a] bool 7
         print(10>1) #true
         print("cat" == "dog") #false
         print (1 != 2) #true
@@ -132,7 +157,7 @@
         print(not today == "Tuesday")   
     #endregion
 
-    #region loops 8
+    #region[c] loops 8
         #region while loops
             x = 0
             while x < 5:
@@ -270,22 +295,35 @@
                     print("Inner loop iteration number " + str(y))
                 print("Exit inner loop")
 
-This is the outer loop iteration number 0
-Inner loop iteration number 0
-Inner loop iteration number 1
-Inner loop iteration number 2
-Inner loop iteration number 3
-Exit inner loop
-This is the outer loop iteration number 1
-Inner loop iteration number 0
-Inner loop iteration number 1
-Inner loop iteration number 2
-Inner loop iteration number 3
-Exit inner loop
+            This is the outer loop iteration number 0
+            Inner loop iteration number 0
+            Inner loop iteration number 1
+            Inner loop iteration number 2
+            Inner loop iteration number 3
+            Exit inner loop
+            This is the outer loop iteration number 1
+            Inner loop iteration number 0
+            Inner loop iteration number 1
+            Inner loop iteration number 2
+            Inner loop iteration number 3
+            Exit inner loop
+        #endregion
+
+        #region[a] shortcut
+            sequence = range(10)
+            new_list = [x for x in sequence if x % 2 == 0]
+        #endregion
+
+        #region[b] shortcut 2
+            sequence = range(10)
+            new_list = []
+            for x in sequence:
+                if x % 2 == 0:
+                    new_list.append(x)
         #endregion
     #endregion  
 
-    #region string 9
+    #region[c] string 9
         #region slice
             string1 = "Greetings, Earthlings"
             print(string1[0])   # Prints “G”
@@ -320,6 +358,9 @@ Exit inner loop
 
             print(format_phone("2025551212")) # Outputs: (202) 555-1212
         #endregion
-
     #endregion
+
+
+
+
 #endregion
